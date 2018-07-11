@@ -1,0 +1,1 @@
+var userApp= anguglar.module('user',[]);

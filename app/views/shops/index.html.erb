@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Shop ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.name %></td>
+        <td><%= User.find(shop.user_id).first_name %></td>
+        <td><%= shop.id %></td>
+        <td><%= link_to 'Show', user_shop_path({id: shop.id}) %></td>
+        <td><%= link_to 'Edit', edit_user_shop_path({id: shop.id})%></td>
+        <td><%= link_to 'Destroy', user_shop_path({id: shop.id}), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shop', new_user_shop_path%>

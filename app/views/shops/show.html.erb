@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shop.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%=User.find(@shop.user_id).first_name %> <%=User.find(@shop.user_id).last_name%>
+</p>
+
+<%= link_to 'Edit', edit_user_shop_path({ id: @shop}) %> |
+<%= link_to 'Back', user_shops_path %>
+
+<!--5b3d89d15fd9054f97c1d867-->
